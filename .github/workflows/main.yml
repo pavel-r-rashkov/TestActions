@@ -11,6 +11,13 @@ jobs:
       - name: Build image
         run: |
           docker build -t testactions .
-      - name: Final step
-        run: echo Aasd
+      - name: Test
+        run: bash tools/test.sh
+      - name: Upload test results
+        uses: actions/upload-artifact@v1
+        with:
+          name: test-results
+          path: TestResults
+
+        
 
