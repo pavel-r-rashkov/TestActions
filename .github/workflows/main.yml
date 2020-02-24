@@ -1,0 +1,16 @@
+name: Example workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Build image
+        run: |
+          docker build -t testactions .
+      - name: Final step
+        run: echo Aasd
+
