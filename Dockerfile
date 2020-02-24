@@ -16,7 +16,7 @@ RUN dotnet build --no-restore -c ${build_config}
 # unit tests
 FROM build AS unit-tests
 WORKDIR /app/Test/
-ENTRYPOINT ["dotnet", "test", "--no-restore", "--logger", "\"xunit;LogFilePath=../../TestResults/unit-tests.xml\"]
+ENTRYPOINT ["dotnet", "test", "--no-restore", "--logger", "\"xunit;LogFilePath=../../TestResults/unit-tests.xml\""]
 
 # publish
 FROM build AS publish
