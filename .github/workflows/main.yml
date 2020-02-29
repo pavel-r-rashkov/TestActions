@@ -23,7 +23,7 @@ jobs:
         with:
           dotnet-version: 3.1.101
       - name: ReportGenerator
-        uses: danielpalme/ReportGenerator-GitHub-Action@v4.5.0
+        uses: danielpalme/ReportGenerator-GitHub-Action
         with:
           reports: 'TestResults/coverage.xml'
           targetdir: 'TestResults/coverage-report'
