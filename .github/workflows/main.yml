@@ -15,6 +15,7 @@ jobs:
         run: bash tools/test.sh
   upload artifacts:
     runs-on: ubuntu-latest
+    steps:
       - name: Upload test results
         uses: actions/upload-artifact@v1
         with:
