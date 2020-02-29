@@ -13,11 +13,19 @@ jobs:
           docker build -t testactions .
       - name: Test
         run: bash tools/test.sh
+  upload artifacts:
+    runs-on: ubuntu-latest
       - name: Upload test results
         uses: actions/upload-artifact@v1
         with:
           name: test-results
           path: TestResults
+      - name: Upload 2
+        uses: actions/upload-artifact@v1
+        with:
+          name: test-res-2
+          path: TestResults/unit-tests.xml
+
 
         
 
