@@ -18,7 +18,7 @@ jobs:
         with:
           name: test-results
           path: TestResults
-      - name: Generate report
+      - name: ReportGenerator
         uses: danielpalme/ReportGenerator-GitHub-Action@v4.5.0
         with:
           reports: 'TestResults/coverage.xml'
