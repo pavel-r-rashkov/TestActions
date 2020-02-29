@@ -18,11 +18,20 @@ jobs:
         with:
           name: test-results
           path: TestResults
-      - name: Upload 2
+      - name: Generate report
+        uses: danielpalme/ReportGenerator-GitHub-Action@v4.5.0
+        with:
+          reports: 'TestResults/coverage.xml'
+          targetdir: 'TestResults/coverage-report'
+          sourcedirs: './'
+          reporttypes: 'HtmlInline'
+          tag: '${{ github.run_number }}_${{ github.run_id }}'
+      - name: Upload coverage report
         uses: actions/upload-artifact@v1
         with:
-          name: test-res-2
-          path: TestResults/unit-tests.xml
+          name: coverage-report
+          path: TestResults/coverage-report
+
 
 
         
