@@ -13,7 +13,7 @@ jobs:
           docker build -t testactions .
       - name: Test
         run: bash tools/test.sh
-  upload artifacts:
+  upload-artifacts:
     runs-on: ubuntu-latest
     steps:
       - name: Upload test results
